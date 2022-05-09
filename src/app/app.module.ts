@@ -48,6 +48,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
