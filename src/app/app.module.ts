@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeComponent } from './components/employee/employee.component';
 // import { LoginComponent } from './components/login/login.component';
 // import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
@@ -54,7 +53,6 @@ import { RegisterComponent } from './components/user/register/register.component
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
