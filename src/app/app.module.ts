@@ -47,6 +47,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { AuthService } from './shared/auth.service';
 
 @NgModule({
   declarations: [
@@ -104,7 +105,7 @@ import { RegisterComponent } from './components/user/register/register.component
     MatBottomSheetModule,
     MatTreeModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

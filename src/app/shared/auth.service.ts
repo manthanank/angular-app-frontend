@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   postUser(emp: Auth) {
-    return this.http.post(this.baseURL, emp);
+    return this.http.post(this.baseURL + `/${emp._id}`, emp);
   }
 
   getUserList() {
