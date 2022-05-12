@@ -1,7 +1,7 @@
-<div class="row">
-  <div class="col">
-    <mat-card>
-      <h1>Register</h1>
+<div class="container">
+  <mat-card>
+    <h1>Register</h1>
+    <div>
       <form [formGroup]="registerForm">
         <div class="row">
           <mat-form-field appearance="outline">
@@ -61,8 +61,10 @@
           </button>
         </div>
       </form>
+    </div>
+    <div>
       <span>Already Users?Click here to</span>
       <a class="underlineHover" routerLink="/login">Login</a>
-    </mat-card>
-  </div>
+    </div>
+  </mat-card>
 </div>
