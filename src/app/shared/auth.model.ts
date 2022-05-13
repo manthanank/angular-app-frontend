@@ -1,6 +1,7 @@
 export class Auth {
   _id: any;
-  name: any;
+  firstName: any;
+  lastName: any;
   email: any;
   password: any;
 }
