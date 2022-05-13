@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,19 +25,24 @@ export class LoginComponent implements OnInit {
   }
   login() {
     //console.log(this.loginForm.value);
-    this.http.get<any>('http://localhost:3000/users').subscribe((res) => {
-      //console.log(res);
-      const user = res.find((a: any) => {
-        return (
-          a.email === this.loginForm.value.email &&
-          a.password === this.loginForm.value.password
-        );
-      });
-      if (user) {
-        this.router.navigate(['home']);
-      } else {
-        alert('Invalid Credentials');
+    this.http.get<any>('http://localhost:3000/users').subscribe(
+      (res) => {
+        //console.log(res);
+        const user = res.find((a: any) => {
+          return (
+            a.email === this.loginForm.value.email &&
+            a.password === this.loginForm.value.password
+          );
+        });
+        if (user) {
+          this.router.navigate(['home']);
+        } else {
+          alert('Invalid Credentials');
+        }
+      },
+      (err) => {
+        console.log(err);
       }
-    });
+    );
   }
 }
