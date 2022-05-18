@@ -8,7 +8,15 @@ import { AuthService } from 'src/app/shared/auth.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
+  onLogoutClick() {
+    this.authService.logout();
+    // this.flashMessage.show('You are logged out', {
+    //   cssClass: 'alert-success', timeout: 3000
+    // });
+    this.router.navigate(['/login']);
+    return false;
+  }
 }

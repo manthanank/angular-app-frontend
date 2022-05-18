@@ -5,11 +5,11 @@
       <form [formGroup]="loginForm">
         <div class="row">
           <mat-form-field appearance="outline">
-            <mat-label>Enter your Email</mat-label>
+            <mat-label>Enter your UserName</mat-label>
             <input
               matInput
-              placeholder="Email"
-              formControlName="email"
+              placeholder="UserName"
+              formControlName="username"
               required
             />
           </mat-form-field>
@@ -34,7 +34,7 @@
           </mat-form-field>
         </div>
         <div class="row">
-          <button mat-raised-button color="primary" (click)="login()">
+          <button mat-raised-button color="primary" (click)="onLoginSubmit()">
             Login
           </button>
         </div>

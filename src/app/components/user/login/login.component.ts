@@ -16,33 +16,23 @@ export class LoginComponent implements OnInit {
     private http: HttpClient
   ) {}
   loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
-  ngOnInit(): void {
-    if (this.authService.isLoggedIn())
-      this.router.navigateByUrl('/userprofile');
-  }
-  login() {
-    //console.log(this.loginForm.value);
-    this.http.get<any>('http://localhost:3000/users').subscribe(
-      (res) => {
-        //console.log(res);
-        const user = res.find((a: any) => {
-          return (
-            a.email === this.loginForm.value.email &&
-            a.password === this.loginForm.value.password
-          );
-        });
-        if (user) {
+  ngOnInit(): void {}
+
+  onLoginSubmit() {
+    this.authService
+      .authenticateUser(this.loginForm.value)
+      .subscribe((data) => {
+        if (data.success) {
+          this.authService.storeUserData(data.token, data.user);
+          //this.flashMessage.show('You are now logged in', {cssClass: 'alert-success', timeout: 5000});
           this.router.navigate(['home']);
         } else {
-          alert('Invalid Credentials');
+          //this.flashMessage.show(data.msg, {cssClass: 'alert-danger', timeout: 5000});
+          this.router.navigate(['login']);
         }
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+      });
   }
 }

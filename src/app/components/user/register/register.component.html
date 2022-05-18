@@ -5,22 +5,22 @@
       <form [formGroup]="registerForm">
         <div class="row">
           <mat-form-field appearance="outline">
-            <mat-label>Enter your FirstName</mat-label>
+            <mat-label>Enter your Name</mat-label>
             <input
               matInput
-              placeholder="FirstName"
-              formControlName="firstName"
+              placeholder="Name"
+              formControlName="name"
               required
             />
           </mat-form-field>
         </div>
         <div class="row">
           <mat-form-field appearance="outline">
-            <mat-label>Enter your LastName</mat-label>
+            <mat-label>Enter your UserName</mat-label>
             <input
               matInput
-              placeholder="LastName"
-              formControlName="lastName"
+              placeholder="UserName"
+              formControlName="username"
               required
             />
           </mat-form-field>
@@ -56,7 +56,11 @@
           </mat-form-field>
         </div>
         <div class="row">
-          <button mat-raised-button color="primary" (click)="register()">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="onRegisterSubmit()"
+          >
             Register
           </button>
         </div>
