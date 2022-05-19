@@ -42,7 +42,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatTreeModule } from '@angular/material/tree';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
@@ -56,7 +55,6 @@ import { AuthService } from './shared/auth.service';
     RegisterComponent,
     HomeComponent,
     NavbarComponent,
-    SidebarComponent,
     UserComponent,
     LoginComponent,
     RegisterComponent,

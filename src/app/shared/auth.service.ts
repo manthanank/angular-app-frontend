@@ -8,7 +8,7 @@ import { Auth } from './auth.model';
 })
 export class AuthService {
   authToken: any;
-
+  user: any;
   constructor(private http: HttpClient) {}
 
   registerUser(user: any) {
@@ -19,14 +19,16 @@ export class AuthService {
     return this.http.post<any>('http://localhost:3000/user/authenticate', user);
   }
   getProfile() {
+    let headers = new Headers();
     this.loadToken();
+    headers.append('Authorization', this.authToken);
     return this.http.get<any>('http://localhost:3000/user/profile');
   }
   storeUserData(token: any, user: any) {
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
-    //this.user = user;
+    this.user = user;
   }
 
   loadToken() {
@@ -40,7 +42,7 @@ export class AuthService {
 
   logout() {
     this.authToken = null;
-    //this.user = null;
+    this.user = null;
     localStorage.clear();
   }
 }
