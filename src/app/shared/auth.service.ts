@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Auth } from './auth.model';
 //import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable({
@@ -38,6 +37,7 @@ export class AuthService {
 
   loggedIn() {
     //return tokenNotExpired('id_token');
+    return true;
   }
 
   logout() {

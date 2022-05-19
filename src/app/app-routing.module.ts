@@ -4,10 +4,11 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { UserComponent } from './components/user/user.component';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   {
     path: 'login',
     component: UserComponent,
@@ -18,7 +19,7 @@ const routes: Routes = [
     component: UserComponent,
     children: [{ path: '', component: RegisterComponent }],
   },
-  { path: '**', redirectTo: 'employee' },
+  { path: '**', redirectTo: 'login' },
 ];
 
 @NgModule({

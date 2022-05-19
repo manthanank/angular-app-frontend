@@ -43,7 +43,6 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatTreeModule } from '@angular/material/tree';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { AuthService } from './shared/auth.service';
@@ -55,7 +54,6 @@ import { AuthService } from './shared/auth.service';
     RegisterComponent,
     HomeComponent,
     NavbarComponent,
-    UserComponent,
     LoginComponent,
     RegisterComponent,
   ],
