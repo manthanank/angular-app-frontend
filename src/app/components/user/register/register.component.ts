@@ -11,6 +11,9 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class RegisterComponent implements OnInit {
   hide = true;
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
   registerForm = new FormGroup({
     name: new FormControl(''),
     username: new FormControl(''),
@@ -33,9 +36,13 @@ export class RegisterComponent implements OnInit {
         if (data.success) {
           //this.flashMessage.show('You are now registered and can now login', {cssClass: 'alert-success', timeout: 3000});
           this.router.navigate(['/login']);
+          this.isSuccessful = true;
+          this.isSignUpFailed = false;
         } else {
           //this.flashMessage.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000});
           this.router.navigate(['/register']);
+          //this.errorMessage = err.error.message;
+          this.isSignUpFailed = true;
         }
       });
   }
